@@ -32,7 +32,7 @@ class imgen(commands.Cog):
         elif aimodel == "weeb":
             model = AiGen.models.get(name="cjwbw/anything-v4.0")
             version = model.versions.get(id="42a996d39a96aedc57b2e0aa8105dea39c9c89d9d266caf6bb4327a1c191b061")
-            utils.write_log(message=f"{interaction.user.id} -- {interaction.user.name}#{interaction.user.discriminator} has requested a audio file with the prompt {imagimation}")
+            utils.write_log(message=f"{interaction.user.id} -- {interaction.user.name}#{interaction.user.discriminator} has requested a Anything Better v3 image file with the prompt {imagimation}")
             await interaction.response.send_message("Sending the result in your dms. Please allow me some time.", ephemeral=True)
             output = version.predict(prompt = f"{imagimation}")
             await interaction.user.send(output[0])
